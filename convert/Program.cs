@@ -1,23 +1,19 @@
-﻿{
-    static void Main(string[] args)
-    {
-        int decimalNumber = 46;
-        Console.WriteLine($"Десятичное число: {decimalNumber}");
+﻿using System;
 
-        string binaryNumber = DecimalToBinary(decimalNumber);
-        Console.WriteLine($"Двоичное число: {binaryNumber}");
-    }
+class Program {
+    static void Main(string[] args) {
+        Console.Write("Введите количество чисел: ");
+        int m = int.Parse(Console.ReadLine());
+        int count = 0;
 
-    static string DecimalToBinary(int decimalNumber)
-    {
-        string binaryNumber = "";
-        while (decimalNumber > 0)
-        {
-            int remainder = decimalNumber % 2;
-            binaryNumber = remainder + binaryNumber;
-            decimalNumber /= 2;
+        for (int i = 0; i < m; i++) {
+            Console.Write($"Введите число {i + 1}: ");
+            int num = int.Parse(Console.ReadLine());
+            if (num > 0) {
+                count++;
+            }
         }
-        return binaryNumber;
+
+        Console.WriteLine($"Количество чисел больше 0: {count}");
     }
 }
-
